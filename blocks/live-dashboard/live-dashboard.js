@@ -54,15 +54,22 @@ export default function decorate(block) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) return;
 
-  const values = block.querySelectorAll('.live-dashboard-value[data-placeholder]');
-  const baselines = [...values].map((el) => parseFloat(el.textContent.replace(/[^0-9.]/g, '')) || null);
+  const values = [...block.querySelectorAll('.live-dashboard-value[data-placeholder]')];
+  // Capture prefix/number/suffix once, up front — never re-derive from the
+  // DOM after mutation, or the suffix accumulates a copy of itself each tick.
+  const parsed = values.map((el) => {
+    const match = el.textContent.trim().match(/^(\D*)([0-9.]+)(.*)$/);
+    if (!match) return null;
+    return { prefix: match[1], value: parseFloat(match[2]), suffix: match[3] };
+  });
+
   setInterval(() => {
     values.forEach((el, i) => {
-      if (baselines[i] === null) return;
+      const entry = parsed[i];
+      if (!entry) return;
       const delta = (Math.random() - 0.5) * 0.06;
-      baselines[i] = Math.max(0, baselines[i] + delta);
-      const suffix = el.textContent.replace(/[0-9.]+/, '').trim();
-      el.textContent = `$${baselines[i].toFixed(2)} ${suffix}`.trim();
+      entry.value = Math.max(0, entry.value + delta);
+      el.textContent = `${entry.prefix}${entry.value.toFixed(2)}${entry.suffix}`;
       el.classList.toggle('is-up', delta >= 0);
       el.classList.toggle('is-down', delta < 0);
     });
