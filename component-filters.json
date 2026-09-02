@@ -91,5 +91,9 @@
     "components": [
       "tabs-item"
     ]
+  },
+  {
+    "id": "wm-hero",
+    "components": []
   }
 ]

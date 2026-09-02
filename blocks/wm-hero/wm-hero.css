@@ -1,0 +1,122 @@
+.wm-hero-container .wm-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.wm-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 140% at 85% 0%, rgb(12 71 100 / 65%) 0%, transparent 55%),
+    linear-gradient(120deg, var(--wm-maroon-dark) 0%, var(--wm-maroon) 55%, #8f1636 100%);
+  color: #fff;
+  padding: clamp(40px, 7vw, 88px) clamp(24px, 5vw, 72px);
+}
+
+/* subtle engineered-grid texture, low opacity, purely decorative */
+.wm-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(120% 120% at 80% 10%, #000 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.wm-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.wm-hero-eyebrow {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 14%);
+  border: 1px solid rgb(255 255 255 / 25%);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wm-hero-content h1 {
+  font-family: var(--type-heading-font-family);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 18px;
+  color: #fff;
+}
+
+.wm-hero-lede {
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.55;
+  color: rgb(255 255 255 / 88%);
+  margin: 0 0 28px;
+  max-width: 54ch;
+}
+
+.wm-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 26px;
+}
+
+.wm-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-family: var(--type-heading-font-family);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wm-hero-btn--primary {
+  background: #fff;
+  color: var(--wm-maroon);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
+}
+
+.wm-hero-btn--primary:hover {
+  transform: translateY(-2px);
+  color: var(--wm-maroon-dark);
+  text-decoration: none;
+}
+
+.wm-hero-btn--secondary {
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  border: 1.5px solid rgb(255 255 255 / 55%);
+}
+
+.wm-hero-btn--secondary:hover {
+  transform: translateY(-2px);
+  background: rgb(255 255 255 / 16%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.wm-hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgb(255 255 255 / 80%);
+}

@@ -1,0 +1,30 @@
+{
+  "definitions": [
+    {
+      "title": "WM Hero",
+      "id": "wm-hero",
+      "model": "wm-hero",
+      "filter": "wm-hero"
+    }
+  ],
+  "models": [
+    {
+      "id": "wm-hero",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "content",
+          "value": "",
+          "label": "Hero content (eyebrow, headline, text, CTAs, trust line)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "wm-hero",
+      "components": []
+    }
+  ]
+}

@@ -34,16 +34,6 @@
               ]
             }
           }
-        },
-        {
-          "id": "live-dashboard",
-          "title": "Live Dashboard",
-          "plugins": {
-            "da": {
-              "unsafeHTML": "<div class=\"live-dashboard\">\n  <div>\n    <div>Current Metal Prices</div>\n  </div>\n  <div>\n    <div>Copper (LME)</div>\n    <div>$4.12/lb</div>\n  </div>\n  <div>\n    <div>Aluminum (LME)</div>\n    <div>$2.47/lb</div>\n  </div>\n  <div>\n    <div>Order Status</div>\n  </div>\n  <div>\n    <div>Order #48213</div>\n    <div>In Transit</div>\n  </div>\n</div>"
-            }
-          },
-          "description": "Live-systems style tile widget (metal prices, order status) with subtle animated values. Demo data — wire a real feed before production use."
         }
       ]
     },

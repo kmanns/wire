@@ -1,25 +1,17 @@
-/* Scoped to this block — uses the real WireMasters brand maroon (sampled from
-   the logo mark), not the sitewide grayscale --color-brand-* tokens. Keeping
-   this local avoids re-skinning cart/checkout/account pages sitewide. */
+/* WireMasters live-systems dashboard. Brand palette from wiremasters.com:
+   maroon #770D29 headers, navy #0C4764 accents. */
 .live-dashboard {
-  --wm-maroon: #7b2539;
-  --wm-maroon-tint: #f6ecee;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 24px 20px 40px;
 }
 
 .live-dashboard-tiles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--color-neutral-300, #e8e8e8);
-  border: 1px solid var(--color-neutral-300, #e8e8e8);
-  border-radius: 4px;
-  overflow: hidden;
+  gap: var(--spacing-medium);
 }
 
-@media (width <= 700px) {
+@media (max-width: 700px) {
   .live-dashboard-tiles {
     grid-template-columns: 1fr;
   }
@@ -27,51 +19,89 @@
 
 .live-dashboard-tile {
   background: #fff;
-  padding: 20px 24px;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 12px;
+  padding: 22px 24px 24px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
 }
 
 .live-dashboard-tile h3 {
-  font-size: 12px;
+  font-family: var(--type-heading-font-family);
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--wm-maroon);
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
   border-bottom: 2px solid var(--wm-maroon);
-  padding-bottom: 8px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* pulsing "live" dot */
+.live-dashboard-tile h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #347935;
+  box-shadow: 0 0 0 0 rgb(52 121 53 / 55%);
+  animation: wm-live-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes wm-live-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(52 121 53 / 55%); }
+  50% { box-shadow: 0 0 0 6px rgb(52 121 53 / 0%); }
 }
 
 .live-dashboard-row {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  padding: 6px 0;
-  border-bottom: 1px dashed var(--color-neutral-300, #e8e8e8);
+  align-items: center;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--color-neutral-300);
 }
 
 .live-dashboard-row:last-of-type {
   border-bottom: none;
 }
 
+.live-dashboard-row > span:first-child {
+  color: var(--color-neutral-800);
+}
+
 .live-dashboard-value {
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  transition: opacity 400ms ease;
+  font-weight: 700;
+  color: var(--wm-navy);
+  transition: opacity 0.4s ease;
 }
 
 .live-dashboard-value.is-down {
-  opacity: 0.65;
-  font-weight: 400;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* order-status pills: navy default, green when shipping */
+.live-dashboard-row > span:last-child:not(.live-dashboard-value) {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgb(12 71 100 / 10%);
+  color: var(--wm-navy);
 }
 
 .live-dashboard-note {
-  font-size: 10px;
-  color: var(--color-neutral-600, #8f8f8f);
-  margin: 12px 0 0;
+  font-size: 11px;
+  color: var(--color-neutral-600);
+  margin: 14px 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .live-dashboard-value {
-    transition: none;
-  }
+  .live-dashboard-value { transition: none; }
+  .live-dashboard-tile h3::before { animation: none; }
 }

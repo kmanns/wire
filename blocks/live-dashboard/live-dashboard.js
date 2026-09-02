@@ -36,8 +36,13 @@ export default function decorate(block) {
     const labelEl = document.createElement('span');
     labelEl.textContent = label;
     const valueEl = document.createElement('span');
-    valueEl.className = 'live-dashboard-value';
-    valueEl.dataset.placeholder = 'true';
+    const isNumeric = /[0-9]/.test(value);
+    if (isNumeric) {
+      // A metric — animates as a live ticker.
+      valueEl.className = 'live-dashboard-value';
+      valueEl.dataset.placeholder = 'true';
+    }
+    // else: a status label — left plain so the pill styling applies.
     valueEl.textContent = value;
     line.append(labelEl, valueEl);
     currentTile.append(line);

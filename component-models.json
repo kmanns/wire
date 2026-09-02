@@ -697,5 +697,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "wm-hero",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Hero content (eyebrow, headline, text, CTAs, trust line)",
+        "valueType": "string"
+      }
+    ]
   }
 ]

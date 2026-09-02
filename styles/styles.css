@@ -13,6 +13,7 @@
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
   /* Adobe Commerce Dropin design tokens */
+
   /* WireMasters brand palette (sourced from wiremasters.com):
      maroon #770D29 primary, navy #0C4764 secondary accent. */
   --color-brand-300: #9e4a5e;
@@ -505,6 +506,68 @@ main .section[data-padding="small"] {
 
 main .section[data-padding="medium"] {
     padding: var(--spacing-small) 0;
+}
+
+/* WireMasters section bands + heading treatment (homepage) */
+main .section.values {
+  background-color: var(--color-neutral-100);
+  margin: 0;
+  padding: var(--spacing-xbig) 0;
+}
+
+main .section.brand-band {
+  margin: 0;
+  padding: var(--spacing-xxbig) 0;
+  background:
+    radial-gradient(120% 160% at 12% 0%, rgb(12 71 100 / 55%) 0%, transparent 55%),
+    linear-gradient(120deg, var(--wm-maroon-dark) 0%, var(--wm-maroon) 100%);
+  color: #fff;
+  text-align: center;
+}
+
+main .section.brand-band h2,
+main .section.brand-band h3 {
+  color: #fff;
+}
+
+main .section.brand-band p {
+  color: rgb(255 255 255 / 90%);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+main .section.brand-band a.button,
+main .section.brand-band a {
+  background: #fff;
+  color: var(--wm-maroon);
+  border-color: #fff;
+}
+
+/* Centered section headings with a maroon underline accent */
+main .section.section-head > div > h2 {
+  font-family: var(--type-heading-font-family);
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 36px);
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 0.15em;
+}
+
+main .section.section-head > div > h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--wm-maroon);
+  margin: 14px auto 0;
+}
+
+main .section.section-head > div > p {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto var(--spacing-medium);
+  color: var(--color-neutral-700);
 }
 
 main .section[data-padding="large"] {
