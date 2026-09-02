@@ -422,111 +422,6 @@
     ]
   },
   {
-    "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "product-details",
-    "fields": [
-      {
-        "component": "text",
-        "name": "defaultSku",
-        "label": "Default SKU",
-        "description": "Optional: Specify a default product SKU if this is a template page"
-      }
-    ]
-  },
-  {
-    "id": "product-list-page",
-    "fields": [
-      {
-        "component": "text",
-        "name": "urlpath",
-        "label": "URL Path",
-        "description": "URL Path of the category as defined in the catalog (not CMS)"
-      },
-      {
-        "component": "number",
-        "name": "pageSize",
-        "label": "Page Size",
-        "value": 9,
-        "description": "Number of products per page (default: 9)"
-      }
-    ]
-  },
-  {
-    "id": "product-recommendations",
-    "fields": [
-      {
-        "component": "text",
-        "name": "recId",
-        "label": "Rec ID",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "currentSku",
-        "label": "Current SKU"
-      }
-    ]
-  },
-  {
-    "id": "targeted-block",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "content",
-        "label": "Content"
-      },
-      {
-        "component": "text",
-        "name": "customerGroups",
-        "label": "Customer Groups",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "customerSegments",
-        "label": "Customer Segments",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "type",
-        "label": "Type",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "fragment",
-        "label": "Fragment",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "hero-v2",
     "fields": [
       {
@@ -577,6 +472,89 @@
         "label": "CTA URL",
         "valueType": "string",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "live-dashboard",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Rows (heading row starts a tile; label/value rows follow)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "product-details",
+    "fields": [
+      {
+        "component": "text",
+        "name": "defaultSku",
+        "label": "Default SKU",
+        "description": "Optional: Specify a default product SKU if this is a template page"
+      }
+    ]
+  },
+  {
+    "id": "product-list-page",
+    "fields": [
+      {
+        "component": "text",
+        "name": "urlpath",
+        "label": "URL Path",
+        "description": "URL Path of the category as defined in the catalog (not CMS)"
+      },
+      {
+        "component": "number",
+        "name": "pageSize",
+        "label": "Page Size",
+        "value": 9,
+        "description": "Number of products per page (default: 9)"
+      }
+    ]
+  },
+  {
+    "id": "product-recommendations",
+    "fields": [
+      {
+        "component": "text",
+        "name": "recId",
+        "label": "Rec ID",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "currentSku",
+        "label": "Current SKU"
       }
     ]
   },
@@ -652,6 +630,40 @@
         "component": "richtext",
         "name": "content",
         "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "targeted-block",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content"
+      },
+      {
+        "component": "text",
+        "name": "customerGroups",
+        "label": "Customer Groups",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "customerSegments",
+        "label": "Customer Segments",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "Type",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "fragment",
+        "label": "Fragment",
         "valueType": "string"
       }
     ]

@@ -44,12 +44,7 @@
       "product-list-page",
       "product-recommendations",
       "targeted-block",
-      "text",
-      "hero-v2",
-      "product-teaser",
-      "quote",
-      "tabs",
-      "video"
+      "text"
     ]
   },
   {
@@ -86,6 +81,10 @@
       "text",
       "image"
     ]
+  },
+  {
+    "id": "live-dashboard",
+    "components": []
   },
   {
     "id": "tabs",

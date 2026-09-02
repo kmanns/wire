@@ -1,0 +1,77 @@
+/* Scoped to this block — uses the real WireMasters brand maroon (sampled from
+   the logo mark), not the sitewide grayscale --color-brand-* tokens. Keeping
+   this local avoids re-skinning cart/checkout/account pages sitewide. */
+.live-dashboard {
+  --wm-maroon: #7b2539;
+  --wm-maroon-tint: #f6ecee;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+.live-dashboard-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-neutral-300, #e8e8e8);
+  border: 1px solid var(--color-neutral-300, #e8e8e8);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (width <= 700px) {
+  .live-dashboard-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
+.live-dashboard-tile {
+  background: #fff;
+  padding: 20px 24px;
+}
+
+.live-dashboard-tile h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--wm-maroon);
+  margin: 0 0 12px;
+  border-bottom: 2px solid var(--wm-maroon);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.live-dashboard-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--color-neutral-300, #e8e8e8);
+}
+
+.live-dashboard-row:last-of-type {
+  border-bottom: none;
+}
+
+.live-dashboard-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  transition: opacity 400ms ease;
+}
+
+.live-dashboard-value.is-down {
+  opacity: 0.65;
+  font-weight: 400;
+}
+
+.live-dashboard-note {
+  font-size: 10px;
+  color: var(--color-neutral-600, #8f8f8f);
+  margin: 12px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dashboard-value {
+    transition: none;
+  }
+}

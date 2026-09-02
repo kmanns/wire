@@ -1,0 +1,30 @@
+{
+  "definitions": [
+    {
+      "title": "Live Dashboard",
+      "id": "live-dashboard",
+      "model": "live-dashboard",
+      "filter": "live-dashboard"
+    }
+  ],
+  "models": [
+    {
+      "id": "live-dashboard",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "content",
+          "value": "",
+          "label": "Rows (heading row starts a tile; label/value rows follow)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "live-dashboard",
+      "components": []
+    }
+  ]
+}
