@@ -85,25 +85,27 @@
   transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
-.wm-hero-btn--primary {
+/* Selectors carry .wm-hero-content to outspecify the global link color
+   (a:not(.dropin-design a)), which would otherwise tint button text maroon. */
+.wm-hero-content a.wm-hero-btn--primary {
   background: #fff;
   color: var(--wm-maroon);
   box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
 }
 
-.wm-hero-btn--primary:hover {
+.wm-hero-content a.wm-hero-btn--primary:hover {
   transform: translateY(-2px);
   color: var(--wm-maroon-dark);
   text-decoration: none;
 }
 
-.wm-hero-btn--secondary {
+.wm-hero-content a.wm-hero-btn--secondary {
   background: rgb(255 255 255 / 8%);
   color: #fff;
   border: 1.5px solid rgb(255 255 255 / 55%);
 }
 
-.wm-hero-btn--secondary:hover {
+.wm-hero-content a.wm-hero-btn--secondary:hover {
   transform: translateY(-2px);
   background: rgb(255 255 255 / 16%);
   color: #fff;
