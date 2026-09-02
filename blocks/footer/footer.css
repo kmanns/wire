@@ -8,6 +8,10 @@ footer .footer > div {
     margin: auto;
     max-width: 1200px;
     padding: 40px 24px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 32px 48px;
 }
 
 footer .footer p {
@@ -70,4 +74,59 @@ footer .footer p {
     footer .footer > div {
         padding: 40px 32px 24px;
     }
+}
+
+/* WireMasters footer column layout — placed last to satisfy
+   no-descending-specificity against the storeview rules above. */
+
+/* Brand column (logo + address) */
+footer .footer > div > .section:first-child {
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+/* Link columns group */
+footer .footer > div > .section:nth-child(2) {
+    flex: 3 1 460px;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul > li {
+    flex: 1 1 150px;
+    list-style: none;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul > li > p {
+    font-family: var(--type-heading-font-family);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-neutral-900);
+    margin-bottom: 12px;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul > li > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul > li > ul > li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+/* Copyright / legal row spans full width along the bottom */
+footer .footer > div > .section:last-child {
+    flex: 1 1 100%;
+    margin-top: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-neutral-300);
 }
