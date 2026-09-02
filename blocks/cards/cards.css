@@ -74,18 +74,30 @@
   margin: 0;
 }
 
-.cards .cards-card-body a,
 .cards .cards-card-body strong {
+  font-weight: 600;
+}
+
+/* Category names are authored as links; EDS auto-buttonizes them. Reset that
+   pill styling back to a plain, full-width, wrapping card title. */
+.cards .cards-card-body a,
+.cards .cards-card-body a.button,
+.cards .cards-card-body a.button.primary {
+  all: unset;
+  box-sizing: border-box;
   font-family: var(--type-heading-font-family);
   font-weight: 600;
   font-size: 16px;
+  line-height: 1.3;
   color: var(--color-neutral-900);
-  text-decoration: none;
+  cursor: pointer;
+  white-space: normal;
+  text-align: left;
 }
 
-.cards .cards-card-body a:hover {
+.cards .cards-card-body a:hover,
+.cards .cards-card-body a.button:hover {
   color: var(--wm-maroon);
-  text-decoration: none;
 }
 
 /* When placed in a highlight/values band, cards read as compact value tiles */
